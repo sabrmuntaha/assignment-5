@@ -6,11 +6,11 @@
     <title>Assignment 5</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 <body data-theme="light">
-    <header class="bg-orange-50 sticky top-0 ...">
+    <header class="bg-orange-50 sticky top-0 ... z-10 glass sm:">
     
         <nav>
           <section class="flex justify-between ... m-8 ... pt-8 py-6 ... mb-20 sticky top-0 ...">
@@ -18,15 +18,15 @@
               <a href="./blog.html" class="btn  relative bg-lime-400 w-24 py-2 ... rounded-lg ... font-bold ... ">Blog</a></div>
             
             <div class="flex">
-                <img class="relative left-24" src="/assets/logo.png" alt="">
-                <h3 class="font-bold ... text-2xl ... ml-2 ... relative left-24 top-4">Donate Bangladesh</h3></div>
+                <img class="relative left-24 hidden lg:block" src="../assets/logo.png" alt="">
+                <h3 class="font-bold ... text-2xl ... ml-2 ... relative left-24 top-4 hidden lg:block">Donate Bangladesh</h3></div>
             </div>
             
             <div class="">
                 <div class="stats shadow bg-orange-50 ">
                     <div class="stat font-semibold flex">
                      <!--<div class="stat-title">Total Page Views</div>--> 
-                     <div><img class="relative top-2" src="/assets/coin.png" alt=""></div>
+                     <div><img class="relative top-2" src="../assets/coin.png" alt=""></div>
                       <div id="current-balance" class="stat-value">50000 BDT</div>
                       
                     </div>
@@ -35,29 +35,36 @@
         </section>
         </nav>
     </header>
-    <main class="">
+    <main class="max-w-screen-xl mx-auto">
         
-     <section class="flex justify-center sticky top-0 ...">
+     <section class="flex justify-center ">
         <div >
-       <button class="btn  relative bg-lime-400 w-24 py-2 ... rounded-lg ... font-bold ...  " >Donation</button>
+       <button id="add-donation" class="btn  relative bg-lime-400 w-24 py-2 ... rounded-lg ... font-bold ...  " >Donation</button>
         </div>
         <div>
-        <button class="btn  relative bg-lime-400 w-24 py-2 ... rounded-lg ... font-bold ...  ">History</button>
+        <button id="add-history" class="btn  relative bg-lime-400 w-24 py-2 ... rounded-lg ... font-bold ...  ">History</button>
+        </div>
+        <div id="donation-history-layout">
+         <div id="history-container"></div>
         </div>
      </section>
+
+     <section id="add-money-section">
      
     <!--FIRST DONATION DIV-->
+     
 
-     <div class="card lg:card-side flex justify-end ... px-40 ... mt-20 ... py-8 ...  my-8 ...    h-full max-h-86 ... bg-slate-50 ">
+     
+     <div  class="card lg:card-side flex justify-end ... px-40 .. mt-20 ... py-8 ...  h-full max-h-86 ... my-8 ... bg-slate-50 ">
 
         
 
-        <figure class="relative left-80">
+        <figure class="relative ">
           <img
-            src="/assets/noakhali.png"
+            src="../assets/noakhali.png"
             alt="" />
         </figure>
-        <div class="card-body relative left-80 w-50%">
+        <div class="card-body relative  w-50%">
             <div class="stats">
                 <div class="stat  flex bg-slate-50">
                  <!--<div class="stat-title">Total Page Views</div>--> 
@@ -71,7 +78,7 @@
             contribution, big or small, makes Please join us in supporting the relief efforts <br> and
              making a positive impact on the lives of those in need.</p>
              <div>
-                <input id ="input-add-money" class="w-96 h-16 font-semibold text-justify ... bg-slate-100" type="text" autocomplete="off" placeholder="Write Donation Amount" id="">
+                <input id ="input-add-money" class="w-96 h-16 font-semibold text-justify ... bg-slate-100" type="number" autocomplete="off" placeholder="Write Donation Amount" id="">
              </div>
           <div class="">
             
@@ -86,12 +93,12 @@
 
     
       <div class="card lg:card-side flex justify-end ... px-40 ... mt-20 ... py-8 ...  h-full max-h-86 ... my-8 ... bg-slate-50 ">
-        <figure class="relative left-80">
+        <figure class="relative ">
           <img
-            src="/assets/feni.png"
+            src="../assets/feni.png"
             alt="" />
         </figure>
-        <div class="card-body relative left-80 w-50%">
+        <div class="card-body relative  w-50%">
 
             <div class="stats">
                 <div class="stat  flex bg-slate-50">
@@ -119,12 +126,12 @@
 
 
       <div class="card lg:card-side flex justify-end ... px-40 ... mt-20 ...  my-8 ...   py-8 ...  h-full max-h-86 ...  bg-slate-50  ">
-        <figure class="relative left-80">
-          <img
-            src="/assets/quota-protest.png"
+        <figure class="relative ">
+          <img class=""
+            src="../assets/quota-protest.png"
             alt="" />
         </figure>
-        <div class="card-body relative left-80 w-50%">
+        <div class="card-body relative  w-50%">
 
             <div class="stats">
                 <div class="stat flex bg-slate-50 ">
@@ -147,15 +154,16 @@
         </div>
       </div>
     
-
-
+      
+    </section>
 
 
 
     </main>
-   
-    <script src="js/style.js"></script>
     
+    <script src="js/style.js"></script>
+    <script src="js/utilities.js"></script>
+   <script src="js/features.js"></script>
    
 </body>
 </html>

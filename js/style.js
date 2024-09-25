@@ -8,10 +8,8 @@ document.getElementById('donate-money').addEventListener('click', function(event
     if(addMoneyInput <= 0){
        alert('Failed to donate')}
 
-     
 
-
-    else {
+    else{
         const visibleAmount = document.getElementById('visible-amount').innerText;
       console.log(visibleAmount)
 
@@ -19,16 +17,9 @@ document.getElementById('donate-money').addEventListener('click', function(event
       const visibleNumber = parseFloat(visibleAmount);
       const newBalance = addMoneyNumber + visibleNumber;
       console.log(newBalance);
-      
+
       document.getElementById('visible-amount').innerText = newBalance;
-    
-      alert('Successfully donated $' + addMoneyNumber);
-  
     }
-
-
-    
-
 
 })
 
